@@ -3,7 +3,7 @@ from collections import deque
 
 
 def parse_args():
-    arg_parse = argparse.ArgumentParser("Advent Of Code - Day 11")
+    arg_parse = argparse.ArgumentParser("Advent Of Code - Day 12")
     arg_parse.add_argument("-f", "--filename", dest="fn", required=False, default="input",
                     type=str, help="Specifies which input file to use")
     args = arg_parse.parse_args()
