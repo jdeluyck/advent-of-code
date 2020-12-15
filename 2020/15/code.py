@@ -16,33 +16,23 @@ def get_input(input_file: str):
 
 def do_calc(input_data: list, max_nr: int):
     cache = {}
-    cnt = 0
-    spoken_nrs = []
+    cnt = len(input_data) + 1
 
-    for idx, nr in enumerate(input_data):
-        tmp = [idx]
-        cache[nr] = tmp
-        spoken_nrs.append(nr)
-        cnt += 1
+    for idx in range(len(input_data)-1):
+        cache[input_data[idx]] = idx + 1
 
-    while cnt < max_nr:
-        last_nr = spoken_nrs[-1]
-        if last_nr in cache and len(cache[last_nr]) == 1:
-                new_nr = 0
+    last_nr = input_data[-1]
+    while cnt <= max_nr:
+        if last_nr not in cache:
+            new_nr = 0
         else:
-            new_nr = cache[last_nr][-1] - cache[last_nr][-2]
+            new_nr = cnt - cache[last_nr] - 1
 
-        spoken_nrs.append(new_nr)
-
-        if new_nr in cache:
-            tmp = [cache[new_nr][-1], len(spoken_nrs) - 1]
-        else:
-            tmp = [len(spoken_nrs) - 1]
-
-        cache[new_nr] = tmp
+        cache[last_nr] = cnt - 1
         cnt += 1
+        last_nr = new_nr
 
-    return spoken_nrs[-1]
+    return last_nr
 
 
 def part1(input_data: list, max_nr: int = 2020):
