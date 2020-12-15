@@ -1,5 +1,4 @@
 import argparse
-from collections import deque
 
 
 def parse_args():
