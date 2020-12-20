@@ -1,6 +1,7 @@
 import argparse
 from itertools import product
 
+
 def parse_args():
     arg_parse = argparse.ArgumentParser("Advent Of Code - Day 17")
     arg_parse.add_argument("-f", "--filename", dest="fn", required=False, default="input",
