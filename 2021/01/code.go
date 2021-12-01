@@ -9,8 +9,6 @@ import (
 )
 
 func parseArgs() (inputFile string) {
-	fmt.Print(os.Args)
-
 	if len(os.Args) == 2 {
 		inputFile = os.Args[1]
 	} else {
