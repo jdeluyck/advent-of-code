@@ -76,7 +76,6 @@ func findScore(inputData []string, charVal map[rune]int, complete bool) (result 
 					if !complete {
 						result += charVal[char]
 					}
-					// fmt.Printf("Illegal char: %v\n", string(char))
 					nextClose = nil
 					break
 				}
