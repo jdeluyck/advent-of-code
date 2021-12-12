@@ -95,7 +95,7 @@ func copyMap(visitedMap map[string]int) (copiedMap map[string]int) {
 func caveVisited(caveName string, visited map[string]int, maxVisits int) bool {
 
 	if !smallCave(caveName) || visited[caveName] == 0 {
-		// big cave, come again
+		// big cave or never visited cave, come again
 		return false
 	}
 
